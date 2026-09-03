@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 
 
@@ -36,6 +38,13 @@ public class Demo2 {
 		driver.findElement(By.id("hobbies-checkbox-3")).click();
 		
 		driver.findElement(By.id("currentAddress")).sendKeys("Bengaluru");
+		
+		WebElement state = driver.findElement(By.id("react-select-3-input"));
+		
+		Select sel  = new Select(state);
+		
+		sel.selectByIndex(0);
+		
 		
 		driver.findElement(By.id("submit")).click();
 		
